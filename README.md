@@ -2,7 +2,7 @@
 
 ssence-ng2-fileupload is a fileUpload Directive for Angular.
 
-[bootstrap-fileinput](http://plugins.krajee.com/file-input)
+依赖的第三方插件：[bootstrap-fileinput](http://plugins.krajee.com/file-input)
 
 ## Usage
 
