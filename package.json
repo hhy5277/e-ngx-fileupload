@@ -1,6 +1,6 @@
 {
   "name": "essence-ng2-fileupload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "essence-ng2-fileupload is a fileUpload Directive for Angular.",
   "keywords": [
     "angular2",
