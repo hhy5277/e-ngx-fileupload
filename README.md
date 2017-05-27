@@ -1,6 +1,6 @@
-# ssence-ng2-fileupload
+# essence-ng2-fileupload
 
-ssence-ng2-fileupload is a fileUpload Directive for Angular.
+essence-ng2-fileupload is a fileUpload Directive for Angular.
 
 依赖的第三方插件：[bootstrap-fileinput](http://plugins.krajee.com/file-input)
 
@@ -9,14 +9,13 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 1. Install
 
 	```shell
-	npm install --save ssence-ng2-fileupload@latest
+	npm install --save essence-ng2-fileupload@latest
 	```
 	
-2. Set in the .angular-cli.json
+2. Set in the .angular-cli.json（@angular/cli）
 
 	```json
     "styles": [
-        "./index.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/bootstrap-fileinput/css/fileinput.min.css"
@@ -36,7 +35,7 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 3. Add the EssenceNg2FileInputModule
 
 	```typescript
-	import {EssenceNg2FileUploadModule} from "ssence-ng2-fileupload";
+	import {EssenceNg2FileUploadModule} from "essence-ng2-fileupload";
 	@NgModule({
 	    imports: [
 	        EssenceNg2FileUploadModule
@@ -47,8 +46,8 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 4. Use in the template
 
 	```html
-	<input id="pic_file" type="file" class="file" name="pic_file" multiple
-           [ssence-ng2-fileupload]="fileInputOpts"
+	<input id="pic_file" type="file" class="file" name="file" multiple
+           [essence-ng2-fileupload]="fileInputOpts"
            (ready)="ready($event)"
            (filebatchuploadcomplete)="filebatchuploadcomplete($event)"
            (filebatchuploaderror)="filebatchuploaderror($event)"
@@ -60,17 +59,7 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 
 	```typescript
 	fileInputOpts: any = {
-        uploadUrl: "/App/Goods/UploadImges",
-        uploadAsync: true,
-        language: "zh",
-        showCaption: false,
-        showRemove: false,
-        showPreview: true,
-        previewFileType: "image",
-        browseLabel: "选择图片",
-        browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i>",
-        uploadClass: "btn btn-success",
-        uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i>"
+        uploadUrl: "/App/Goods/UploadImges"
     };
 
     ready ($event: any) {
