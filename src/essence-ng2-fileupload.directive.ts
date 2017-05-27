@@ -3,7 +3,7 @@
  * homepage：http://www.laixiangran.cn.
  */
 
-import {Directive, ElementRef, OnInit, Input, Output, EventEmitter, OnDestroy} from "@angular/core";
+import { Directive, ElementRef, OnInit, Input, Output, EventEmitter, OnDestroy } from "@angular/core";
 
 @Directive({
     selector: "[essence-ng2-fileupload]"
@@ -13,33 +13,9 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
     private $el: JQuery;
     private defaultOpts: any = {
         language: "zh",
-        // previewFileType: "any",
-        showUpload: false,
-        showPreview: true,
         showCaption: false,
-        showClose: false,
-        showCancel: false,
-        showRemove: true,
-        maxFileCount: 0,
-        defaultPreviewContent: null,
-        resizePreference: 'height',
-        // uploadUrl: this.dataService.serverHost + "/auth/attachmentItemsAction/upload.do", //上传的地址
-        // uploadExtraData: (previewId: any, index: any) => {
-        // 	return {attachmentGroupId: this.selectedOrg.c_attachment};
-        // },
-        layoutTemplates: {
-            actions: '<div class="file-actions">\n' +
-            '    <div class="file-footer-buttons">\n' +
-            '    </div>\n' +
-            '</div>',
-        },
-        uploadAsync: false,
-        browseClass: "btn btn-primary",
-        fileType: "any",
         resizeImage: true,
-        maxFileSize: 0,
-        previewFileIcon: '<i class="fa fa-file"></i>',
-        allowedPreviewTypes: ['image', 'html', 'video', 'audio', 'flash'], // set to empty, null or false to disable preview for all types
+        allowedPreviewTypes: ['image', 'html', 'video', 'audio', 'flash'],
         previewFileIconSettings: {
             'doc': '<i class="fa fa-file-word-o text-primary"></i>',
             'xls': '<i class="fa fa-file-excel-o text-success"></i>',
@@ -99,12 +75,12 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
     @Output()
     filebatchuploadsuccess: EventEmitter<any> = new EventEmitter<any>(false);
 
-    constructor (el: ElementRef) {
+    constructor(el: ElementRef) {
         this.el = el.nativeElement;
         this.$el = $(this.el);
     }
 
-    ngOnInit () {
+    ngOnInit() {
         this.$el.fileinput($.extend(true, {}, this.defaultOpts, this.fileInputOpts));
 
         this.ready.emit(this);
@@ -153,63 +129,63 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
         });
     }
 
-    ngOnDestroy () {
+    ngOnDestroy() {
         this.destroy();
     }
 
     /**
      * 禁用
      */
-    disable () {
+    disable() {
         this.$el.fileinput('disable');
     }
 
     /**
      * 启用
      */
-    enable () {
+    enable() {
         this.$el.fileinput('enable');
     }
 
     /**
      * 重置
      */
-    reset () {
+    reset() {
         this.$el.fileinput('reset');
     }
 
     /**
      * 刷新
      */
-    refresh () {
+    refresh() {
         this.$el.fileinput('refresh');
     }
 
     /**
      * 清空
      */
-    clear () {
+    clear() {
         this.$el.fileinput('clear');
     }
 
     /**
      * 销毁
      */
-    destroy () {
+    destroy() {
         this.$el.fileinput('destroy');
     }
 
     /**
      * 上传
      */
-    upload () {
+    upload() {
         this.$el.fileinput('upload');
     }
 
     /**
      * 取消上传
      */
-    cancel () {
+    cancel() {
         this.$el.fileinput('cancel');
     }
 }

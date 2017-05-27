@@ -12,20 +12,25 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 	npm install --save ssence-ng2-fileupload@latest
 	```
 	
-2. 在index.html引入jquery、bootstrap、bootstrap-fileinput
+2. Set in the .angular-cli.json
 
-	```html
-	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/css/fileinput.min.css" rel="stylesheet">
-    	
-	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/canvas-to-blob.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/sortable.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/purify.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/fileinput.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/themes/fa/theme.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/locales/zh.js"></script>
+	```json
+    "styles": [
+        "./index.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/bootstrap-fileinput/css/fileinput.min.css"
+    ],
+    "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap-fileinput/js/plugins/piexif.min.js",
+        "../node_modules/bootstrap-fileinput/js/plugins/sortable.min.js",
+        "../node_modules/bootstrap-fileinput/js/plugins/purify.min.js",
+        "../node_modules/bootstrap-fileinput/js/fileinput.min.js",
+        "../node_modules/bootstrap-fileinput/themes/fa/theme.min.js",
+        "../node_modules/bootstrap-fileinput/js/locales/zh.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ]
 	```
 
 3. Add the EssenceNg2FileInputModule
@@ -97,27 +102,8 @@ ssence-ng2-fileupload is a fileUpload Directive for Angular.
 ```typescript
 defaultOpts: any = {
     language: "zh",
-    showUpload: false,
-    showPreview: true,
     showCaption: false,
-    showClose: false,
-    showCancel: false,
-    showRemove: true,
-    maxFileCount: 0,
-    defaultPreviewContent: null,
-    resizePreference: 'height',
-    layoutTemplates: {
-        actions: '<div class="file-actions">\n' +
-        '    <div class="file-footer-buttons">\n' +
-        '    </div>\n' +
-        '</div>',
-    },
-    uploadAsync: false,
-    browseClass: "btn btn-primary",
-    fileType: "any",
     resizeImage: true,
-    maxFileSize: 0,
-    previewFileIcon: '<i class="fa fa-file"></i>',
     allowedPreviewTypes: ['image', 'html', 'video', 'audio', 'flash'],
     previewFileIconSettings: {
         'doc': '<i class="fa fa-file-word-o text-primary"></i>',
@@ -175,14 +161,14 @@ defaultOpts: any = {
 
 ### Instance Method
 
-- `disable` - 禁用上传控件
-- `enable` - 启用上传控件
-- `reset` - 重置上传控件
-- `destroy` - 销毁上传控件
-- `refresh` - 刷新上传控件
-- `clear` - 清空上传控件
-- `upload` - 上传
-- `cancel` - 取消上传
+- `disable(): void` - 禁用上传控件
+- `enable(): void` - 启用上传控件
+- `reset(): void` - 重置上传控件
+- `destroy(): void` - 销毁上传控件
+- `refresh(): void` - 刷新上传控件
+- `clear(): void` - 清空上传控件
+- `upload(): void` - 上传
+- `cancel(): void` - 取消上传
 
 ## Develop
 
