@@ -1,6 +1,6 @@
 {
 	"name": "essence-ng2-fileupload",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "essence-ng2-fileupload is a fileUpload Directive for Angular.",
 	"keywords": [
 		"angular2",
@@ -13,7 +13,7 @@
 		"url": "https://github.com/laixiangran/essence-ng2-fileupload.git"
 	},
 	"author": {
-		"name": "赖祥燃",
+		"name": "赖祥燃 胡星兆",
 		"email": "laixiangran@163.com",
 		"bolg": "http://www.cnblogs.com/laixiangran",
 		"homepage": "http://www.laixiangran.cn"

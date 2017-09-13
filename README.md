@@ -148,6 +148,8 @@ defaultOpts: any = {
 
 - `filebatchuploaderror` - 批量文件上传失败的事件 $event = {event: event, data: data, msg: msg}
 
+- `change` - 当通过文件浏览按钮在文件浏览窗中选择单个文件或多个文件时，将触发此事件 $event = event
+
 ### Instance Method
 
 - `disable(): void` - 禁用上传控件

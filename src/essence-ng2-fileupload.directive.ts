@@ -75,6 +75,9 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
     @Output()
     filebatchuploadsuccess: EventEmitter<any> = new EventEmitter<any>(false);
 
+    @Output()
+    change: EventEmitter<any> = new EventEmitter<any>(false);
+
     constructor(el: ElementRef) {
         this.el = el.nativeElement;
         this.$el = $(this.el);
@@ -125,7 +128,11 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
                 data: data,
                 previewId: previewId,
                 index: index
-            })
+            });
+        });
+
+        this.$el.on('change', (event: any) => {
+            this.change.emit(event);
         });
     }
 
