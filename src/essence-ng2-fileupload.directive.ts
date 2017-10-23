@@ -6,7 +6,8 @@
 import { Directive, ElementRef, OnInit, Input, Output, EventEmitter, OnDestroy } from "@angular/core";
 
 @Directive({
-    selector: "[essence-ng2-fileupload]"
+    selector: "[essence-ng2-fileupload]",
+    exportAs: 'eNgFileupload'
 })
 export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
     private el: HTMLElement;

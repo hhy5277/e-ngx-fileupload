@@ -85,6 +85,10 @@ essence-ng2-fileupload is a fileUpload Directive for Angular.
 
 ## API
 
+### exportAs
+
+- `eNgFileupload` - 导出的指令变量，可在模板获取指令类并调用（`#eNgFileupload="eNgFileupload"`）。
+
 ### Inputs
 
 - `ssence-ng2-fileupload`（`Object`） - 与[bootstrap-fileinput配置属性](http://plugins.krajee.com/file-input#options)一致，默认配置如下：
