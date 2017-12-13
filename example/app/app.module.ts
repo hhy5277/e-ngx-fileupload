@@ -1,13 +1,13 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {EssenceNg2FileUploadModule} from "../../src/essence-ng2-fileupload.module";
+import { AppComponent } from './app.component';
+import { ENgxFileUploadModule } from '../../src/e-ngx-fileupload.module';
 
 @NgModule({
     imports: [
         BrowserModule,
-		EssenceNg2FileUploadModule
+        ENgxFileUploadModule
     ],
     declarations: [
         AppComponent

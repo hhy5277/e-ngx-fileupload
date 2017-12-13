@@ -1,16 +1,16 @@
 {
-	"name": "essence-ng2-fileupload",
-	"version": "1.0.5",
-	"description": "essence-ng2-fileupload is a fileUpload Directive for Angular.",
+	"name": "e-ngx-fileupload",
+	"version": "1.2.0",
+	"description": "基于Angular的文件上传组件，依赖第三方插件：bootstrap-fileinput",
 	"keywords": [
-		"angular2",
+		"angular",
 		"fileUpload",
 		"laixiangran"
 	],
-	"homepage": "https://github.com/laixiangran/essence-ng2-fileupload#readme",
+	"homepage": "https://github.com/laixiangran/e-ngx-fileupload#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/laixiangran/essence-ng2-fileupload.git"
+		"url": "https://github.com/laixiangran/e-ngx-fileupload.git"
 	},
 	"author": {
 		"name": "赖祥燃 胡星兆",
@@ -20,7 +20,7 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/laixiangran/essence-ng2-fileupload/issues"
+		"url": "https://github.com/laixiangran/e-ngx-fileupload/issues"
 	},
 	"scripts": {
 		"release": "ngc && npm publish",

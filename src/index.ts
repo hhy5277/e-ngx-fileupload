@@ -3,4 +3,4 @@
  * homepage：http://www.laixiangran.cn
  */
 
-export {EssenceNg2FileUploadModule} from './essence-ng2-fileupload.module';
+export { ENgxFileUploadModule } from './e-ngx-fileupload.module';

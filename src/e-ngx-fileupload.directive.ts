@@ -3,17 +3,17 @@
  * homepage：http://www.laixiangran.cn.
  */
 
-import { Directive, ElementRef, OnInit, Input, Output, EventEmitter, OnDestroy } from "@angular/core";
+import { Directive, ElementRef, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 @Directive({
-    selector: "[essence-ng2-fileupload]",
-    exportAs: 'eNgFileupload'
+    selector: '[eNgxFileUpload]',
+    exportAs: 'eNgxFileUpload'
 })
-export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
+export class ENgxFileUploadDirective implements OnInit, OnDestroy {
     private el: HTMLElement;
     private $el: JQuery;
     private defaultOpts: any = {
-        language: "zh",
+        language: 'zh',
         showCaption: false,
         resizeImage: true,
         allowedPreviewTypes: ['image', 'html', 'video', 'audio', 'flash'],
@@ -56,7 +56,7 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
         }
     };
 
-    @Input('essence-ng2-fileupload') fileInputOpts: any;
+    @Input('eNgxFileUpload') fileInputOpts: any;
 
     @Output()
     ready: EventEmitter<any> = new EventEmitter<any>(false);
@@ -78,6 +78,15 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
 
     @Output()
     changes: EventEmitter<any> = new EventEmitter<any>(false);
+
+    @Output()
+    fileclear: EventEmitter<any> = new EventEmitter<any>(false);
+
+    @Output()
+    filereset: EventEmitter<any> = new EventEmitter<any>(false);
+
+    @Output()
+    filepreupload: EventEmitter<any> = new EventEmitter<any>(false);
 
     constructor(el: ElementRef) {
         this.el = el.nativeElement;
@@ -134,6 +143,23 @@ export class EssenceNg2FileUploadDirective implements OnInit, OnDestroy {
 
         this.$el.on('change', (event: any) => {
             this.changes.emit(event);
+        });
+
+        this.$el.on('fileclear', (event: any) => {
+            this.fileclear.emit(event);
+        });
+
+        this.$el.on('filereset', (event: any) => {
+            this.filereset.emit(event);
+        });
+
+        this.$el.on('filepreupload', (event: any, data: any, previewId: any, index: any) => {
+            this.filepreupload.emit({
+                event: event,
+                data: data,
+                previewId: previewId,
+                index: index
+            });
         });
     }
 

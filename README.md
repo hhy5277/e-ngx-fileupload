@@ -1,6 +1,6 @@
-# essence-ng2-fileupload
+# e-ngx-fileupload
 
-essence-ng2-fileupload is a fileUpload Directive for Angular.
+基于Angular的文件上传组件。
 
 依赖的第三方插件：[bootstrap-fileinput](http://plugins.krajee.com/file-input)
 
@@ -9,7 +9,7 @@ essence-ng2-fileupload is a fileUpload Directive for Angular.
 1. Install
 
 	```shell
-	npm install --save essence-ng2-fileupload@latest
+	npm install --save e-ngx-fileupload@latest
 	```
 	
 2. Set in the .angular-cli.json（@angular/cli）
@@ -32,13 +32,13 @@ essence-ng2-fileupload is a fileUpload Directive for Angular.
     ]
 	```
 
-3. Add the EssenceNg2FileInputModule
+3. Add the ENgxFileUploadModule
 
 	```typescript
-	import {EssenceNg2FileUploadModule} from "essence-ng2-fileupload";
+	import { ENgxFileUploadModule } from "e-ngx-fileupload";
 	@NgModule({
 	    imports: [
-	        EssenceNg2FileUploadModule
+	        ENgxFileUploadModule
 	    ]
 	})
 	```
@@ -47,7 +47,7 @@ essence-ng2-fileupload is a fileUpload Directive for Angular.
 
 	```html
 	<input id="pic_file" type="file" class="file" name="file" multiple
-           [essence-ng2-fileupload]="fileInputOpts"
+           [eNgxFileUpload]="fileInputOpts"
            (ready)="ready($event)"
            (filebatchuploadcomplete)="filebatchuploadcomplete($event)"
            (filebatchuploaderror)="filebatchuploaderror($event)"
@@ -87,11 +87,11 @@ essence-ng2-fileupload is a fileUpload Directive for Angular.
 
 ### exportAs
 
-- `eNgFileupload` - 导出的指令变量，可在模板获取指令类并调用（`#eNgFileupload="eNgFileupload"`）。
+- `eNgxFileUpload` - 导出的指令变量，可在模板获取指令类并调用（`#eNgxFileUpload="eNgxFileUpload"`）。
 
 ### Inputs
 
-- `ssence-ng2-fileupload`（`Object`） - 与[bootstrap-fileinput配置属性](http://plugins.krajee.com/file-input#options)一致，默认配置如下：
+- `eNgxFileUpload`（`Object`） - 与[bootstrap-fileinput配置属性](http://plugins.krajee.com/file-input#options)一致，默认配置如下：
 ```typescript
 defaultOpts: any = {
     language: "zh",
@@ -140,7 +140,7 @@ defaultOpts: any = {
 
 ### Outputs
 
-- `ready` - fileinput初始化完成的事件，$event为当前EssenceNg2FileInputDirective实例
+- `ready` - fileinput初始化完成的事件，$event为当前ENgxFileInputDirective实例
 
 - `fileuploaded` - 单个文件上传成功的事件，$event = {event: event, data: data, previewId: previewId, index: index}
 
@@ -153,6 +153,13 @@ defaultOpts: any = {
 - `filebatchuploaderror` - 批量文件上传失败的事件 $event = {event: event, data: data, msg: msg}
 
 - `changes` - 当通过文件浏览按钮在文件浏览窗中选择单个文件或多个文件时，将触发此事件 $event = event
+
+- `fileclear` - 当通过文件移除按钮（移除所有文件）或预览窗口关闭图标被按下以清除文件预览时触发此事件。
+
+- `filereset` - 当文件输入被重置为初始值时触发此事件，没有文件的时候。
+
+- `filepreupload` - 此事件仅在ajax上传时以及每个缩略图文件上传之前触发。
+
 
 ### Instance Method
 
