@@ -32,7 +32,6 @@
 	"typings": "dist/index.d.ts",
 	"dependencies": {
 		"@types/bootstrap": "^3.3.33",
-		"@types/bootstrap-fileinput": "0.0.5",
 		"@types/jquery": "^2.0.45",
 		"bootstrap": "^3.3.7",
 		"bootstrap-fileinput": "^4.4.1",

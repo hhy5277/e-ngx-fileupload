@@ -94,7 +94,7 @@ export class ENgxFileUploadDirective implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.$el.fileinput($.extend(true, {}, this.defaultOpts, this.fileInputOpts));
+        this.$el['fileinput']($.extend(true, {}, this.defaultOpts, this.fileInputOpts));
 
         this.ready.emit(this);
 
@@ -171,55 +171,55 @@ export class ENgxFileUploadDirective implements OnInit, OnDestroy {
      * 禁用
      */
     disable() {
-        this.$el.fileinput('disable');
+        this.$el['fileinput']('disable');
     }
 
     /**
      * 启用
      */
     enable() {
-        this.$el.fileinput('enable');
+        this.$el['fileinput']('enable');
     }
 
     /**
      * 重置
      */
     reset() {
-        this.$el.fileinput('reset');
+        this.$el['fileinput']('reset');
     }
 
     /**
      * 刷新
      */
     refresh() {
-        this.$el.fileinput('refresh');
+        this.$el['fileinput']('refresh');
     }
 
     /**
      * 清空
      */
     clear() {
-        this.$el.fileinput('clear');
+        this.$el['fileinput']('clear');
     }
 
     /**
      * 销毁
      */
     destroy() {
-        this.$el.fileinput('destroy');
+        this.$el['fileinput']('destroy');
     }
 
     /**
      * 上传
      */
     upload() {
-        this.$el.fileinput('upload');
+        this.$el['fileinput']('upload');
     }
 
     /**
      * 取消上传
      */
     cancel() {
-        this.$el.fileinput('cancel');
+        this.$el['fileinput']('cancel');
     }
 }
